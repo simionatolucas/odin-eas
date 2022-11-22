@@ -24,15 +24,12 @@ body {
     height: 25px;
 }
 
-/* Empuja hacia abajo cada 16 recuadros */
-/* .square:nth-child(17n + 1) { 
-    width: 100%;
-    border: 0;
-    height: 0;
-} */
-
 .line-break {
     width: 100%;
     border: 0;
     height: 0;
+}
+
+.selected {
+    background-color: black;
 }
