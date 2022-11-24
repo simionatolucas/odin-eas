@@ -7,4 +7,4 @@ App created as an exercise for [The Odin Project](https://www.theodinproject.com
 - Color selector.
 - Rainbow mode.
 
-### Try the live preview [here](https://www.simionatolucas.github.io/odin-eas/)!
+### Try the live preview [here](https://simionatolucas.github.io/odin-eas/)!
