@@ -29,13 +29,31 @@ gridSizeSlider.onchange = () => {
     enable();
 };
 
-const colorPicker = document.querySelector("#color-picker")
+const colorPicker = document.querySelector("#color-picker");
+const rainbowBtn = document.querySelector("#rainbow");
+let rainbow = false;
+
+rainbowBtn.addEventListener("click", () => {
+    if (rainbow == true) {
+        rainbow = false;
+        rainbowBtn.style.backgroundColor = "#eee";
+    } else {
+        rainbow = true;
+        rainbowBtn.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+    }
+});
 
 function enable() {
     const squares = document.querySelectorAll(".square");
     squares.forEach(square => square.addEventListener("mouseover", (e) => {
         if (e.buttons == 1) {
-            square.style.backgroundColor = colorPicker.value;
+            if (rainbow == true) {
+                let randomColor = Math.floor(Math.random()*16777215).toString(16)
+                square.style.backgroundColor = `#${randomColor}`;
+            } else {
+                square.style.backgroundColor = colorPicker.value;
+            }
+            
         } else if (e.buttons == 2) {
             square.style.backgroundColor = "#fff";
         }
@@ -43,7 +61,12 @@ function enable() {
     
     squares.forEach(square => square.addEventListener("mousedown", (e) => {
         if (e.buttons == 1) {
-            square.style.backgroundColor = colorPicker.value;
+            if (rainbow == true) {
+                let randomColor = Math.floor(Math.random()*16777215).toString(16)
+                square.style.backgroundColor = `#${randomColor}`;
+            } else {
+                square.style.backgroundColor = colorPicker.value;
+            }
         } else if (e.buttons == 2) {
             square.style.backgroundColor = "#fff";
         }
