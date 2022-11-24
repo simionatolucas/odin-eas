@@ -16,11 +16,6 @@
 </head> 
 <body oncontextmenu="return false;">
     <div id="app">
-        <div id="right-side">
-            <div id="squares-container"></div>
-            <div id="hint">Use left click to draw, and right click to erase.</div>
-        </div>
-        
         <div id="controls">
             <h1 id="title">Etch-a-Sketch!</h1>
             <input type="color" id="color-picker" value="#000000">
@@ -30,6 +25,11 @@
                 <div id="current-size">16x16</div>
                 <input type="range" id="grid-size" min="1" max="100" value="16">
             </div>
+        </div>
+
+        <div id="right-side">
+            <div id="squares-container"></div>
+            <div id="hint">Use left click to draw, and right click to erase.</div>
         </div>
     </div>
 </body>

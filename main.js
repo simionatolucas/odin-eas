@@ -13,9 +13,6 @@ function createGrid(size) {
     }
 }
 
-createGrid(16);
-enable();
-
 const gridSizeSlider = document.querySelector("#grid-size");
 let currentSize = document.querySelector("#current-size");
 
@@ -80,3 +77,6 @@ function resetCanvas() {
     const squares = document.querySelectorAll(".square");
     squares.forEach(square => square.style.backgroundColor = "#fff");
 }
+
+createGrid(16);
+enable();
