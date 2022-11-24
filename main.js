@@ -16,38 +16,36 @@ function createGrid(size) {
 createGrid(16);
 enable();
 
-const gridSizeBtn = document.querySelector("#grid-size");
-gridSizeBtn.addEventListener("click", () => {
-    let size = prompt("Grid size (max 100): ");
-    let currentSize = document.querySelector("#current-size");
+const gridSizeSlider = document.querySelector("#grid-size");
+let currentSize = document.querySelector("#current-size");
 
-    while(size > 100) {
-        size = prompt("Grid size (max 100): ");
-    }
+gridSizeSlider.oninput = () => {
+    currentSize.textContent = `${gridSizeSlider.value} x ${gridSizeSlider.value}`;
+}
 
+gridSizeSlider.onchange = () => {
     resetCanvas();
-    createGrid(size);
+    createGrid(gridSizeSlider.value);
     enable();
+};
 
-    currentSize.textContent = `Current size: ${size}`;
-});
-
+const colorPicker = document.querySelector("#color-picker")
 
 function enable() {
     const squares = document.querySelectorAll(".square");
     squares.forEach(square => square.addEventListener("mouseover", (e) => {
         if (e.buttons == 1) {
-            square.classList.add("selected");
+            square.style.backgroundColor = colorPicker.value;
         } else if (e.buttons == 2) {
-            square.classList.remove("selected");
+            square.style.backgroundColor = "#fff";
         }
     }));
     
     squares.forEach(square => square.addEventListener("mousedown", (e) => {
         if (e.buttons == 1) {
-            square.classList.add("selected");
+            square.style.backgroundColor = colorPicker.value;
         } else if (e.buttons == 2) {
-            square.classList.remove("selected");
+            square.style.backgroundColor = "#fff";
         }
     }));
 }
@@ -57,5 +55,5 @@ resetCanvasBtn.addEventListener("click", resetCanvas);
 
 function resetCanvas() {
     const squares = document.querySelectorAll(".square");
-    squares.forEach(square => square.classList.remove("selected"));
+    squares.forEach(square => square.style.backgroundColor = "#fff");
 }
