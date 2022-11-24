@@ -10,24 +10,30 @@ body {
     margin: 0;
 }
 
-#squares-container {
+#app {
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.square {
+#squares-container {
+    order: 1;
+    display: grid;
+    width: 700px;
+    height: 700px;
     border: 1px solid #ccc;
-    margin: 0px;
-    width: 25px;
-    height: 25px;
 }
 
-.line-break {
-    width: 100%;
-    border: 0;
-    height: 0;
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px;
+}
+
+.square {
+    margin: 0px;
 }
 
 .selected {

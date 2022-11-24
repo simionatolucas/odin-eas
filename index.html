@@ -11,7 +11,14 @@
     <script src="main.js" defer></script>
 </head> 
 <body oncontextmenu="return false;" draggable="false">
-    <div id="squares-container"></div>
-    <button id="reset-canvas">Reset</button>
+    <div id="app">
+        <div id="squares-container"></div>
+
+        <div id="controls">
+            <button id="reset-canvas">Reset</button>
+            <button id="grid-size">Set Grid Size</button>
+            <div id="current-size">Current size: 16</div>
+        </div>
+    </div>
 </body>
 </html>
